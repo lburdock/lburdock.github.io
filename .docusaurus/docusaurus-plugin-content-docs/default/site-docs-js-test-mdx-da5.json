@@ -1,0 +1,25 @@
+{
+  "unversionedId": "js-test",
+  "id": "js-test",
+  "isDocsHomePage": false,
+  "title": "Jest + React Testing Library",
+  "description": "Quick reference",
+  "source": "@site/docs/js-test.mdx",
+  "sourceDirName": ".",
+  "slug": "/js-test",
+  "permalink": "/docs/js-test",
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "description": "Quick reference",
+    "hide_table_of_contents": true,
+    "hide_title": true,
+    "keywords": [
+      "jest",
+      "expect"
+    ],
+    "sidebar_position": 1,
+    "id": "js-test"
+  },
+  "sidebar": "tutorialSidebar"
+}

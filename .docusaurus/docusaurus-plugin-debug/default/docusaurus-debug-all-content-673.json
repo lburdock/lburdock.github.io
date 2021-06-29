@@ -1,0 +1,75 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "versionLabel": "Next",
+          "versionPath": "/docs",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/burdock/Projects/lburdock.github.io/sidebars.js",
+          "contentPath": "/Users/burdock/Projects/lburdock.github.io/docs",
+          "contentPathLocalized": "/Users/burdock/Projects/lburdock.github.io/i18n/en/docusaurus-plugin-content-docs/current",
+          "mainDocId": "js-test",
+          "sidebars": {
+            "tutorialSidebar": [
+              {
+                "type": "doc",
+                "id": "js-test"
+              }
+            ]
+          },
+          "permalinkToSidebar": {
+            "/docs/js-test": "tutorialSidebar"
+          },
+          "docs": [
+            {
+              "unversionedId": "js-test",
+              "id": "js-test",
+              "isDocsHomePage": false,
+              "title": "Jest + React Testing Library",
+              "description": "Quick reference",
+              "source": "@site/docs/js-test.mdx",
+              "sourceDirName": ".",
+              "slug": "/js-test",
+              "permalink": "/docs/js-test",
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "description": "Quick reference",
+                "hide_table_of_contents": true,
+                "hide_title": true,
+                "keywords": [
+                  "jest",
+                  "expect"
+                ],
+                "sidebar_position": 1,
+                "id": "js-test"
+              },
+              "sidebar": "tutorialSidebar"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": null
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.js"
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {
+    "default": null
+  },
+  "docusaurus-theme-classic": {
+    "default": null
+  }
+}

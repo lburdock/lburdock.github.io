@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg width="190" height="250" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_5">
+   <polygon fill="#2e333a" id="svg_1" points="0,0 120,0 120,70 190,70 190,250 0,250"/>
+   <polygon fill="#2e333a" id="svg_2" points="130,0 130,60 190,60"/>
+   <text fill="#ffffff" font-family="Sans-serif" font-size="120" font-weight="bold" id="svg_4" stroke-width="0" text-anchor="middle" x="96" xml:space="preserve" y="180">LB</text>
+  </g>
+ </g>
+</svg>
