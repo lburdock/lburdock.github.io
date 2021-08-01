@@ -404,22 +404,71 @@ test("classConsumer", () => {
 
 #### Test syntax
 
-```jsx title="foo.test.jsx"
+```jsx title="button.test.jsx"
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import Button from "./button";
 
 describe("Button", () => {
   test("renders", () => {
-    render(<button>Okay</button>);
+    render(<Button>Okay</Button>);
     const btn = screen.getByRole("button");
     expect(btn).toBeInTheDocument();
   });
 });
 ```
 
+#### User event example
+
+```jsx
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import Button from "./button";
+
+describe("Button", () => {
+  test("renders", () => {
+    const onClick = jest.fn();
+    render(<Button onClick={onClick}>Okay</Button>);
+    userEvent.click(screen.getByRole("button"));
+    expect(onClick).toHaveBeenCalled();
+  });
+});
+```
+
+<ReferenceLink href="https://testing-library.com/docs/ecosystem-user-event" />
+
 </div>
 
 <div className="col col--6">
+
+#### Async testing
+
+```jsx
+import {
+  render,
+  screen,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
+
+test("renders", () => {
+  render(<Button>Okay</Button>);
+
+  // Preferred: Use `findBy` to wait for the element to appear
+  expect(await screen.findByRole("button")).toBeInTheDocument();
+
+  // `findBy` is equivalent to using `waitFor` with `getBy`
+  await waitFor(() =>
+    expect(screen.getByRole("button")).toBeInTheDocument()
+  );
+
+  // Shorthand for element removal
+  await waitForElementToBeRemoved(screen.getByRole("button"));
+});
+```
+
+<ReferenceLink href="https://testing-library.com/docs/dom-testing-library/api-async" />
 
 #### Render function
 
@@ -441,6 +490,8 @@ const {
   wrapper: ({ children }) => <Layout>{children}</Layout>,
 });
 ```
+
+<ReferenceLink href="https://testing-library.com/docs/react-testing-library/api#render" />
 
 </div>
 </div>
@@ -599,3 +650,48 @@ findAllByTestId
 ````
 
 <ReferenceLink href="https://testing-library.com/docs/queries/about#priority" />
+
+### Implicit roles
+
+<details>
+<summary>These can be used by any of the role queries.</summary>
+<p className="margin-top--md">
+
+| Element                   |      Role       |
+| ------------------------- | :-------------: |
+| `<a>`                     |     `link`      |
+| `<article>`               |    `article`    |
+| `<aside>`                 | `complementary` |
+| `<details>`               |     `group`     |
+| `<h1>` to `<h6>`          |    `heading`    |
+| `<hr>`                    |   `separator`   |
+| `<img>`                   |      `img`      |
+| `<input type="button">`   |    `button`     |
+| `<input type="checkbox">` |   `checkbox`    |
+| `<input type="email">`    |    `textbox`    |
+| `<input type="image">`    |    `button`     |
+| `<input type="number">`   |  `spinbutton`   |
+| `<input type="radio">`    |     `radio`     |
+| `<input type="range">`    |    `slider`     |
+| `<input type="reset">`    |    `button`     |
+| `<input type="search">`   |   `searchbox`   |
+| `<input type="submit">`   |    `button`     |
+| `<input type="tel">`      |    `textbox`    |
+| `<input type="text">`     |    `textbox`    |
+| `<input type="url">`      |    `textbox`    |
+| `<li>`                    |   `listitem`    |
+| `<main>`                  |     `main`      |
+| `<nav>`                   |  `navigation`   |
+| `<ol>`                    |     `list`      |
+| `<option>`                |    `option`     |
+| `<output>`                |    `status`     |
+| `<progress>`              |  `progressbar`  |
+| `<select multiple>`       |    `listbox`    |
+| `<select>`                |   `combobox`    |
+| `<textarea>`              |    `textbox`    |
+| `<ul>`                    |     `list`      |
+
+</p>
+
+<ReferenceLink href="https://www.w3.org/TR/html-aria/#docconformance" />
+</details>
