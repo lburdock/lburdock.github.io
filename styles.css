@@ -1,0 +1,129 @@
+:root {
+  --bg-color: #e9faf1;
+  --contrast-color: #000000;
+}
+
+body,
+html {
+  font-family: "Verdana", sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--contrast-color);
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 1000px;
+  padding: 2rem;
+}
+
+h1,
+h3 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-left: -0.6vw;
+}
+
+h2 {
+  font-weight: bold;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.mb-32 {
+  margin-bottom: 2rem;
+}
+
+.mt-4 {
+  margin-top: 0.25rem;
+}
+.mt-8 {
+  margin-top: 0.5rem;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid > div {
+  background: var(--bg-color);
+  border-top: 4px solid var(--contrast-color);
+  min-height: 220px;
+  padding: 1rem 0;
+}
+
+a.arrow {
+  font-size: 3rem;
+  margin-top: -1.5rem;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+svg {
+  fill: var(--contrast-color);
+  width: 36px;
+  height: 36px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.title {
+  min-height: 100px;
+}
+
+.skills {
+  font-size: 0.8rem;
+}
+
+.skills > span {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid > div {
+    min-height: 0;
+  }
+
+  .title {
+    min-height: 0px;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (600px < width <= 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
